@@ -41,7 +41,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Page Title',
+            'User Portal',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                   color: Colors.white,

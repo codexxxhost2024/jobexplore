@@ -41,7 +41,7 @@ class _SearchWidgetState extends State<SearchWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Page Title',
+            'Search Jobs',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                   color: Colors.white,

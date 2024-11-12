@@ -41,7 +41,7 @@ class _CandidatesWidgetState extends State<CandidatesWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Page Title',
+            'Candidates',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                   color: Colors.white,
