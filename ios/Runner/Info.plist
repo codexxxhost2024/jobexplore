@@ -29,7 +29,7 @@
         <string>jobexplore.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>jobexplore</string>
+        <string>http</string>
         </array>
         </dict>
     </array>
