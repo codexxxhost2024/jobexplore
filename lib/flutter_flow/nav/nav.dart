@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -44,7 +45,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : const HomePageWidget(),
+          : const NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -63,12 +64,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : const HomePageWidget(),
+              : const NavBarPage(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'HomePage')
+              : const HomePageWidget(),
+        ),
+        FFRoute(
+          name: 'Search',
+          path: '/search',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Search')
+              : const SearchWidget(),
+        ),
+        FFRoute(
+          name: 'Jobs',
+          path: '/jobs',
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'Jobs') : const JobsWidget(),
+        ),
+        FFRoute(
+          name: 'Candidates',
+          path: '/candidates',
+          builder: (context, params) => const CandidatesWidget(),
+        ),
+        FFRoute(
+          name: 'Companies',
+          path: '/companies',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Companies')
+              : const CompaniesWidget(),
+        ),
+        FFRoute(
+          name: 'Dashboard',
+          path: '/dashboard',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Dashboard')
+              : const DashboardWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
