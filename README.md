@@ -1,4 +1,6 @@
-JobExplore
+# JobExplore
+
+![App Launcher Icon](https://github.com/codexxxhost2024/jobexplore/blob/main/assets%2Fimages%2Fapp_launcher_icon.png)
 
 **JobExplore** is a powerful, sleek, and native job discovery platform developed using Flutter and Dart. Built with performance and efficiency in mind, this project leverages the full potential of Flutter's cross-platform capabilities to deliver a seamless experience on both iOS and Android. Proudly developed by **Explore Malaysia** and spearheaded by [**Emil Alvaro Serrano Danguilan**](https://aitekph.com), this project redefines job hunting with its state-of-the-art UI and responsive design.
 
@@ -70,5 +72,3 @@ The JobExplore app follows a clean, modular structure, making it easy to expand,
 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-
