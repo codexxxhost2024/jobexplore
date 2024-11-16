@@ -12,3 +12,4 @@ export '/list17_notifications/list17_notifications_widget.dart'
 export '/pages/create_account1/create_account1_widget.dart'
     show CreateAccount1Widget;
 export '/pages/login/login_widget.dart' show LoginWidget;
+export '/dash/dash_widget.dart' show DashWidget;

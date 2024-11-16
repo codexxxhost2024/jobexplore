@@ -144,6 +144,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Login',
           path: '/login',
           builder: (context, params) => const LoginWidget(),
+        ),
+        FFRoute(
+          name: 'Dash',
+          path: '/dash',
+          builder: (context, params) => const DashWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
