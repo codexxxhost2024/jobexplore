@@ -10,6 +10,8 @@ import 'schema/job_record.dart';
 import 'schema/users_record.dart';
 import 'schema/companies_record.dart';
 import 'schema/company_record.dart';
+import 'schema/job_category_record.dart';
+import 'schema/search_cache_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -23,6 +25,8 @@ export 'schema/job_record.dart';
 export 'schema/users_record.dart';
 export 'schema/companies_record.dart';
 export 'schema/company_record.dart';
+export 'schema/job_category_record.dart';
+export 'schema/search_cache_record.dart';
 
 /// Functions to query JobsListRecords (as a Stream and as a Future).
 Future<int> queryJobsListRecordCount({
@@ -210,6 +214,80 @@ Future<List<CompanyRecord>> queryCompanyRecordOnce({
     queryCollectionOnce(
       CompanyRecord.collection(parent),
       CompanyRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query JobCategoryRecords (as a Stream and as a Future).
+Future<int> queryJobCategoryRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      JobCategoryRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<JobCategoryRecord>> queryJobCategoryRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      JobCategoryRecord.collection,
+      JobCategoryRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<JobCategoryRecord>> queryJobCategoryRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      JobCategoryRecord.collection,
+      JobCategoryRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query SearchCacheRecords (as a Stream and as a Future).
+Future<int> querySearchCacheRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SearchCacheRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SearchCacheRecord>> querySearchCacheRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SearchCacheRecord.collection,
+      SearchCacheRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SearchCacheRecord>> querySearchCacheRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SearchCacheRecord.collection,
+      SearchCacheRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

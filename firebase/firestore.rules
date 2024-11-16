@@ -45,5 +45,19 @@ service cloud.firestore {
       allow read: if true;
     }
 
+
+    match /job_category/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /search_cache/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
   }
 }

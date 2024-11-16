@@ -15,9 +15,10 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for ChoiceChips widget.
   FormFieldController<List<String>>? choiceChipsValueController;
-  List<String>? get choiceChipsValues => choiceChipsValueController?.value;
-  set choiceChipsValues(List<String>? val) =>
-      choiceChipsValueController?.value = val;
+  String? get choiceChipsValue =>
+      choiceChipsValueController?.value?.firstOrNull;
+  set choiceChipsValue(String? val) =>
+      choiceChipsValueController?.value = val != null ? [val] : [];
 
   @override
   void initState(BuildContext context) {

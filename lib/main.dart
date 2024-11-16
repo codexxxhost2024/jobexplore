@@ -131,7 +131,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'Jobs': const JobsWidget(),
       'Search': const SearchWidget(),
       'HomePage': const HomePageWidget(),
-      'Candidates1': const Candidates1Widget(),
+      'Candidates': const CandidatesWidget(),
       'Dashboard': const DashboardWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -193,7 +193,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             activeIcon: Icon(
-              Icons.group_rounded,
+              Icons.group,
               size: 44.0,
             ),
             label: 'Candidates',

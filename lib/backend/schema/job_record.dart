@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -50,6 +51,11 @@ class JobRecord extends FirestoreRecord {
   DateTime? get updatedOn => _updatedOn;
   bool hasUpdatedOn() => _updatedOn != null;
 
+  // "categories" field.
+  List<DocumentReference>? _categories;
+  List<DocumentReference> get categories => _categories ?? const [];
+  bool hasCategories() => _categories != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -60,6 +66,7 @@ class JobRecord extends FirestoreRecord {
     _salary = castToType<double>(snapshotData['salary']);
     _postedOn = snapshotData['postedOn'] as DateTime?;
     _updatedOn = snapshotData['updatedOn'] as DateTime?;
+    _categories = getDataList(snapshotData['categories']);
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -129,13 +136,15 @@ class JobRecordDocumentEquality implements Equality<JobRecord> {
 
   @override
   bool equals(JobRecord? e1, JobRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.title == e2?.title &&
         e1?.description == e2?.description &&
         e1?.address == e2?.address &&
         e1?.company == e2?.company &&
         e1?.salary == e2?.salary &&
         e1?.postedOn == e2?.postedOn &&
-        e1?.updatedOn == e2?.updatedOn;
+        e1?.updatedOn == e2?.updatedOn &&
+        listEquality.equals(e1?.categories, e2?.categories);
   }
 
   @override
@@ -146,7 +155,8 @@ class JobRecordDocumentEquality implements Equality<JobRecord> {
         e?.company,
         e?.salary,
         e?.postedOn,
-        e?.updatedOn
+        e?.updatedOn,
+        e?.categories
       ]);
 
   @override

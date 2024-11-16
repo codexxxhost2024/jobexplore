@@ -5,25 +5,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'create_account1_model.dart';
-export 'create_account1_model.dart';
+import 'create_account_model.dart';
+export 'create_account_model.dart';
 
-class CreateAccount1Widget extends StatefulWidget {
-  const CreateAccount1Widget({super.key});
+class CreateAccountWidget extends StatefulWidget {
+  const CreateAccountWidget({super.key});
 
   @override
-  State<CreateAccount1Widget> createState() => _CreateAccount1WidgetState();
+  State<CreateAccountWidget> createState() => _CreateAccountWidgetState();
 }
 
-class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
-  late CreateAccount1Model _model;
+class _CreateAccountWidgetState extends State<CreateAccountWidget> {
+  late CreateAccountModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateAccount1Model());
+    _model = createModel(context, () => CreateAccountModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -70,7 +70,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                       children: [
                         Container(
                           width: double.infinity,
-                          height: 140.0,
+                          height: 94.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -81,23 +81,17 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                               topRight: Radius.circular(0.0),
                             ),
                           ),
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                32.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'brand.ai',
-                              style: FlutterFlowTheme.of(context)
-                                  .displaySmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .displaySmallFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .displaySmallFamily),
-                                  ),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: Container(
+                            decoration: const BoxDecoration(),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.asset(
+                                'assets/images/logo.png',
+                                width: 200.0,
+                                height: 54.0,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                         ),
@@ -107,7 +101,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                             padding: const EdgeInsets.all(32.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
                                   'Create an account',
@@ -116,6 +110,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .displaySmallFamily,
+                                        fontSize: 28.0,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -473,7 +468,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                     text: 'Create Account',
                                     options: FFButtonOptions(
                                       width: 370.0,
-                                      height: 44.0,
+                                      height: 59.0,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
@@ -508,50 +503,62 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 12.0),
-                                  child: RichText(
-                                    textScaler:
-                                        MediaQuery.of(context).textScaler,
-                                    text: TextSpan(
-                                      children: [
-                                        const TextSpan(
-                                          text: 'Already have an account? ',
-                                          style: TextStyle(),
-                                        ),
-                                        TextSpan(
-                                          text: 'Sign In here',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontSize: 16.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMediumFamily),
-                                              ),
-                                        )
-                                      ],
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLargeFamily,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLargeFamily),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('Login');
+                                    },
+                                    child: RichText(
+                                      textScaler:
+                                          MediaQuery.of(context).textScaler,
+                                      text: TextSpan(
+                                        children: [
+                                          const TextSpan(
+                                            text: 'Already have an account? ',
+                                            style: TextStyle(),
                                           ),
+                                          TextSpan(
+                                            text: 'Sign In here',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  fontSize: 16.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
+                                                ),
+                                          )
+                                        ],
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeFamily),
+                                            ),
+                                      ),
                                     ),
                                   ),
                                 ),

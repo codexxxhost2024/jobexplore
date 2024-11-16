@@ -45,6 +45,16 @@ class UsersRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
+  // "is_company" field.
+  bool? _isCompany;
+  bool get isCompany => _isCompany ?? false;
+  bool hasIsCompany() => _isCompany != null;
+
+  // "is_applicant" field.
+  bool? _isApplicant;
+  bool get isApplicant => _isApplicant ?? false;
+  bool hasIsApplicant() => _isApplicant != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -52,6 +62,8 @@ class UsersRecord extends FirestoreRecord {
     _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
+    _isCompany = snapshotData['is_company'] as bool?;
+    _isApplicant = snapshotData['is_applicant'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -94,6 +106,8 @@ Map<String, dynamic> createUsersRecordData({
   String? uid,
   DateTime? createdTime,
   String? phoneNumber,
+  bool? isCompany,
+  bool? isApplicant,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -103,6 +117,8 @@ Map<String, dynamic> createUsersRecordData({
       'uid': uid,
       'created_time': createdTime,
       'phone_number': phoneNumber,
+      'is_company': isCompany,
+      'is_applicant': isApplicant,
     }.withoutNulls,
   );
 
@@ -119,7 +135,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.photoUrl == e2?.photoUrl &&
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.phoneNumber == e2?.phoneNumber;
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.isCompany == e2?.isCompany &&
+        e1?.isApplicant == e2?.isApplicant;
   }
 
   @override
@@ -129,7 +147,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.photoUrl,
         e?.uid,
         e?.createdTime,
-        e?.phoneNumber
+        e?.phoneNumber,
+        e?.isCompany,
+        e?.isApplicant
       ]);
 
   @override

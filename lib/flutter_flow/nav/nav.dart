@@ -73,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const CreateAccount1Widget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const CreateAccountWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const CreateAccount1Widget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const CreateAccountWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -102,18 +102,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               params.isEmpty ? const NavBarPage(initialPage: 'Jobs') : const JobsWidget(),
         ),
         FFRoute(
-          name: 'Candidates',
-          path: '/candidates',
-          builder: (context, params) => const CandidatesWidget(),
-        ),
-        FFRoute(
-          name: 'Candidates1',
-          path: '/candidates1',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Candidates1')
-              : const Candidates1Widget(),
-        ),
-        FFRoute(
           name: 'Dashboard',
           path: '/dashboard',
           builder: (context, params) => params.isEmpty
@@ -121,34 +109,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const DashboardWidget(),
         ),
         FFRoute(
-          name: 'Candidates2',
-          path: '/candidates2',
-          builder: (context, params) => const Candidates2Widget(),
+          name: 'Candidates',
+          path: '/candidates',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Candidates')
+              : const CandidatesWidget(),
         ),
         FFRoute(
-          name: 'ListCategories',
-          path: '/listCategories',
-          builder: (context, params) => const ListCategoriesWidget(),
-        ),
-        FFRoute(
-          name: 'List17Notifications',
-          path: '/list17Notifications',
-          builder: (context, params) => const List17NotificationsWidget(),
-        ),
-        FFRoute(
-          name: 'CreateAccount1',
-          path: '/createAccount1',
-          builder: (context, params) => const CreateAccount1Widget(),
+          name: 'CreateAccount',
+          path: '/createAccount',
+          builder: (context, params) => const CreateAccountWidget(),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
           builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
-          name: 'Dash',
-          path: '/dash',
-          builder: (context, params) => const DashWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -319,7 +294,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/createAccount1';
+            return '/createAccount';
           }
           return null;
         },
