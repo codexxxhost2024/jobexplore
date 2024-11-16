@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class JobexploreFirebaseUser extends BaseAuthUser {
-  JobexploreFirebaseUser(this.user);
+class ExploreFirebaseUser extends BaseAuthUser {
+  ExploreFirebaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -54,18 +54,17 @@ class JobexploreFirebaseUser extends BaseAuthUser {
 
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
-  static BaseAuthUser fromFirebaseUser(User? user) =>
-      JobexploreFirebaseUser(user);
+  static BaseAuthUser fromFirebaseUser(User? user) => ExploreFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> jobexploreFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> exploreFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = JobexploreFirebaseUser(user);
+        currentUser = ExploreFirebaseUser(user);
         return currentUser!;
       },
     );

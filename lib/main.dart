@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = jobexploreFirebaseUserStream()
+    userStream = exploreFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'jobexplore',
+      title: 'Explore',
       localizationsDelegates: const [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,

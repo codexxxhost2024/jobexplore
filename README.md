@@ -1,4 +1,4 @@
-# jobexplore
+# Explore
 
 A new Flutter project.
 

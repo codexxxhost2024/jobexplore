@@ -5,7 +5,7 @@
 
 
     <application
-        android:label="jobexplore"
+        android:label="Explore"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" android:host="jobexplore.com" />
+                <data android:scheme="http" android:host="explore.com" />
             </intent-filter>
 
         </activity>
