@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "972606243719",
+    "project_id": "jobexplore-hdnljq",
+    "storage_bucket": "jobexplore-hdnljq.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972606243719:android:ad3d42f61387c7da654922",
+        "android_client_info": {
+          "package_name": "com.mycompany.jobexplore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALsxsm03FEoEKyyJuMOFpJeigBEuujg3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
