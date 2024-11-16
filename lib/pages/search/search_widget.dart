@@ -318,7 +318,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       child: Image.network(
-                                                        'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmVhY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60',
+                                                        'https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMHx8am9ic3xlbnwwfHx8fDE3MzE3MzU4NDN8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                                         width: double.infinity,
                                                         height: double.infinity,
                                                         fit: BoxFit.cover,
@@ -614,7 +614,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                                                   .circular(
                                                                       8.0),
                                                           child: Image.network(
-                                                            'https://images.unsplash.com/photo-1597475681177-809cfdc76cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVhY2hob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                                                            'https://images.unsplash.com/photo-1543269664-56d93c1b41a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxqb2JzfGVufDB8fHx8MTczMTczNTg0M3ww&ixlib=rb-4.0.3&q=80&w=1080',
                                                             width:
                                                                 double.infinity,
                                                             height:

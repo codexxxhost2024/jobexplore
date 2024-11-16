@@ -54,10 +54,19 @@ class _HeaderlogoWidgetState extends State<HeaderlogoWidget> {
               ),
             ),
           ),
-          FaIcon(
-            FontAwesomeIcons.solidUserCircle,
-            color: FlutterFlowTheme.of(context).primaryText,
-            size: 28.0,
+          InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed('Profile');
+            },
+            child: FaIcon(
+              FontAwesomeIcons.solidUserCircle,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 28.0,
+            ),
           ),
         ],
       ),
