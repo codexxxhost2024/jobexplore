@@ -462,7 +462,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         return;
                                       }
 
-                                      context.goNamedAuth(
+                                      context.pushNamedAuth(
                                           'HomePage', context.mounted);
                                     },
                                     text: 'Create Account',

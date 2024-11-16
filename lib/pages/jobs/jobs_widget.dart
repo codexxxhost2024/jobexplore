@@ -132,24 +132,28 @@ class _JobsWidgetState extends State<JobsWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
-                                      width: 32.0,
-                                      height: 32.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
+                                    Padding(
+                                      padding: const EdgeInsets.all(12.0),
+                                      child: Container(
+                                        width: 32.0,
+                                        height: 32.0,
+                                        decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          width: 2.0,
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          shape: BoxShape.rectangle,
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
                                         ),
-                                      ),
-                                      child: Icon(
-                                        Icons.favorite_border,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 16.0,
+                                        child: Icon(
+                                          Icons.line_axis,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          size: 16.0,
+                                        ),
                                       ),
                                     ),
                                     Expanded(
@@ -164,7 +168,7 @@ class _JobsWidgetState extends State<JobsWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'New Like!',
+                                              'New Job!',
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -216,7 +220,7 @@ class _JobsWidgetState extends State<JobsWidget> {
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 4.0),
                                               child: Text(
-                                                '2 hours ago',
+                                                'posted 2 hours ago',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelSmall
