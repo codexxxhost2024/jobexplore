@@ -92,11 +92,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CandidatesWidget(),
         ),
         FFRoute(
-          name: 'Companies',
-          path: '/companies',
+          name: 'Candidates1',
+          path: '/candidates1',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Companies')
-              : const CompaniesWidget(),
+              ? const NavBarPage(initialPage: 'Candidates1')
+              : const Candidates1Widget(),
         ),
         FFRoute(
           name: 'Dashboard',
@@ -114,6 +114,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ListCategories',
           path: '/listCategories',
           builder: (context, params) => const ListCategoriesWidget(),
+        ),
+        FFRoute(
+          name: 'List17Notifications',
+          path: '/list17Notifications',
+          builder: (context, params) => const List17NotificationsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -185,6 +190,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    List<String>? collectionNamePath,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -202,6 +208,7 @@ class FFParameters {
       param,
       type,
       isList,
+      collectionNamePath: collectionNamePath,
     );
   }
 }

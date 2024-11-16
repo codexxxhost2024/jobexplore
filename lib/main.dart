@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
@@ -12,6 +13,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
+
+  await initFirebase();
 
   runApp(const MyApp());
 }
@@ -110,7 +113,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'Jobs': const JobsWidget(),
       'Search': const SearchWidget(),
       'HomePage': const HomePageWidget(),
-      'Companies': const CompaniesWidget(),
+      'Candidates1': const Candidates1Widget(),
       'Dashboard': const DashboardWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -168,14 +171,14 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.compare_sharp,
+              Icons.group_rounded,
               size: 24.0,
             ),
             activeIcon: Icon(
-              Icons.compare_sharp,
+              Icons.group_rounded,
               size: 44.0,
             ),
-            label: 'Companies',
+            label: 'Candidates',
             tooltip: '',
           ),
           BottomNavigationBarItem(
